@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'category/category.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'home/logoWhite.png' %}">
+    <title>JJ</title>
+</head>
+<body>
+    <div class="containerCategory">
+        <div class="containerCategoryGradient">
+            <div class="navbar_for_category">
+                {% if user %}
+                {% include 'navbar/navbarLogout.html' %}
+                {% else %}
+                {% include 'navbar/navbarLogin.html' %}
+                {% endif %}
+            </div>
+            <div class="displayCategory">
+                <div class="categoryTitle">{{ category }}</div>
+            </div>
+
+            <div class="forProduct">
+                <div class="leftSide">
+                    <button class="ctoggle-button" id="filter" onclick="toggleElementc()"></button>
+
+                    <div class="ctoggle-element" id="toggleElementc">
+                        <a href="javascript:void(0);" class="contentExitc" onclick="closeToggleElementc()">X</a>
+                        <a class="contentTogglec" href="{% url 'category' category=0 %}" value="0">All PRODUCTS</a>
+                        <a class="contentTogglec" href="{% url 'category' category=1 %}" value="1">ADVENTURE</a>
+                        <a class="contentTogglec" href="{% url 'category' category=2 %}" value="2">SPORTS</a>
+                        <a class="contentTogglec" href="{% url 'category' category=3 %}" value="3">SHOOTING</a>
+                        <a class="contentTogglec" href="{% url 'category' category=4 %}" value="4">CONSOLES</a>
+                    </div>
+                </div>
+                {% if products %}
+                <div class="rightSide">
+                    <div class="containerProduct">
+                        {% for product in products %}
+                        <a href="{% url 'product' prod=product.id %}" value="{{ product.id }}">
+                            <div class="GridGroup">
+                                <div class="imgDiv"><img src="../..{{ product.productImage.url }}" alt="{{ product.productName }}"></div>
+                                <div class="titleDiv">{{ product.productName }}</div>
+                                <!-- <div class="desDiv">{{ product.productDescription }}</div> -->
+                                <div class="sellingPrice">₹ {{ product.productSellingPrice }}</div>
+                                <div class="productPrice"><strike>₹ {{ product.productPrice }}</strike></div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="prevNext">
+                        <button class="prev">Prev</button>
+                        <button class="next">Next</button>
+                    </div>
+                </div>
+                {% else %}
+                <div class="noproductFound">
+                    No product found!
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="footerCategory">
+        {% include '../footerPage.html' %}
+    </div>
+</body>
+<script>
+    const cards = document.querySelectorAll('.GridGroup');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const prevNextContainer = document.querySelector('.prevNext');
+
+    const cardsPerPage = 9;
+    let currentPage = 1;
+
+    function showPage(page) {
+        const startIndex = (page - 1) * cardsPerPage;
+        const endIndex = startIndex + cardsPerPage;
+
+        cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+                card.style.display = "inline-block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Show/Hide buttons based on the number of products and current page
+        prev.style.display = (currentPage > 1) ? "inline-block" : "none";
+        next.style.display = (currentPage < Math.ceil(cards.length / cardsPerPage)) ? "inline-block" : "none";
+    }
+
+    // Initial check to show/hide buttons
+    if (cards.length <= cardsPerPage) {
+        prevNextContainer.style.display = "none";
+    }
+
+    showPage(currentPage);
+
+    prev.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
+
+    next.addEventListener("click", () => {
+        const totalPages = Math.ceil(cards.length / cardsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    });
+
+    function toggleElementc() {
+        var element = document.getElementById("toggleElementc");
+        element.classList.toggle("show");
+    }
+
+    function closeToggleElementc() {
+        var element = document.getElementById("toggleElementc");
+        element.classList.remove("show");
+    }
+    document.addEventListener('click', function(event) {
+        var isClickInside = document.getElementById('filter').contains(event.target) || document.getElementById('toggleElementc').contains(event.target);
+
+        if (!isClickInside) {
+            closeToggleElementc();
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+.containerNav {
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgb(3, 16, 19);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.toggle-button {
+  background-image: url("logoWhite.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10%;
+}
+
+.toggle-element {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  transition: left 0.3s ease;
+}
+
+.toggle-element.show {
+  left: 0;
+}
+
+.contentToggle,
+.contentExit {
+  font-family: 'Press Start 2P', cursive;
+  color: black;
+  font-size: large;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.contentExit {
+  border-radius: 25px;
+}
+.contentToggle:hover{
+ background-color: rgba(0, 0, 0, 0.4) ;
+ color: aliceblue;
+ border-radius: none;
+}
+.contentExit:hover{
+  background-color: rgba(255, 0, 0) ;
+  color: aliceblue;
+}
+
+.toggle-element.show .contentToggle,
+.toggle-element.show .contentExit {
+  opacity: 1;
+}
+
+.contentExit {
+  font-size: x-large;
+  background-color: white;
+  width: 50px;
+  margin: 5% auto;
+}
+
+#search_form {
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.searchdropdown {
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+}
+
+input {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 45px 10px 30px;
+  width: 100%;
+  max-width: 445px;
+  height: 50px;
+  border: 0;
+  border-radius: 25px;
+  font-size: medium;
+}
+
+input:focus {
+  outline: none;
+}
+
+.suggestionbox {
+  background-color: rgba(240, 248, 255, 0.5);
+  border-radius: 20px;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  max-width: 445px;
+}
+
+.suggestion {
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 20px;
+  text-decoration: none;
+  color: rgb(3, 16, 19);
+  width: 100%;
+  padding: 2%;
+  display: block;
+  background-color: rgba(240, 248, 255, 0.6);
+  border-bottom: 2px solid aliceblue;
+}
+
+.suggestion:hover {
+  color: red;
+  background-color: rgba(3, 16, 19, 0.7);
+}
+
+.no-results {
+  border-radius: 20px;
+  text-decoration: none;
+  color: rgb(3, 16, 19);
+  width: 100%;
+  padding: 2%;
+  display: block;
+  background-color: rgba(240, 248, 255, 0.6);
+  border-bottom: 2px solid aliceblue;
+}
+#cart{
+  color: red;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  #search_form {
+    width: 60%;
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerNav{
+    height: 70px;
+  }
+  #search_form {
+    width: 70%;
+  }
+  .toggle-button {
+    margin-left: 1%;
+  }
+  .suggestionbox{
+    width:60%;
+  }
+  .suggestion{
+    width:100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contentToggle,
+  .contentExit {
+    font-size: medium;
+  }
+
+  input {
+    width: calc(100% - 20px);
+  }
+
+  .suggestion,
+  .no-results {
+    width: calc(100% - 20px);
+  }
+}

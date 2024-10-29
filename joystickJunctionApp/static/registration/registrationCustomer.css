@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-image: url('backgroundImg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(3, 16, 19, 0.6);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.back_to_login {
+    color: white;
+    font-weight: bold;
+}
+.logo {
+    text-align: center;
+}
+
+.logoImg {
+    height: 70px;
+    width: 70px;
+}
+
+.displayTags {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.inputTags {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    background-color: rgb(3, 16, 19, 1);
+    color: aliceblue;
+    font-size: medium;
+    border: 0;
+    height: 38px;
+    width: 150px;
+    border-radius: 19px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: red;
+}
+
+input {
+    padding: 0;
+    height: 26px;
+    width: 100%;
+    max-width: 210px;
+    border-radius: 13px;
+    border: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+}
+
+select.genderOption {
+    height: 26px;
+    width: 100%;
+    max-width: 210px;
+    border-radius: 13px;
+    border: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+select.genderOption:focus {
+    outline: none;
+}
+
+.homeDiv {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.home {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.home:hover {
+    background-color: black;
+    color: red;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small devices (tablets, 600px and up) */
+@media (min-width: 600px) {
+    .container {
+        width: 80%;
+    }
+
+    input, select.genderOption {
+        height: 30px;
+    }
+}
+
+/* Medium devices (large tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        width: 60%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        width: 50%;
+    }
+}

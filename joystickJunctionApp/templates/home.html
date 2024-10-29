@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'home/logoWhite.png' %}">
+    <title>JJ</title>
+</head>
+<body>
+    <div class="navbar_for_home">
+        {% if user %}
+            {% include 'navbar/navbarLogout.html' %}
+        {% else %}
+            {% include 'navbar/navbarLogin.html' %}
+        {% endif %}
+    </div>
+    <div class="coverPic">
+        <div class="coverPicGradient">
+            <a class="viewProducts" href="{% url 'category' category=0 %}">View Products</a>
+        </div>
+    </div>
+    <div class="space1">
+        <h1 class="quote1">Get the Best!</h1>
+    </div>
+    <div class="midCoverPic">
+        <div class="midCoverPicGradient">
+            <div class="category">
+                <a href="{% url 'category' category=1 %}"><img class="decoImg" src="{% static 'home/deco1.jpg' %}" alt="deco1"><span class="catName">PARTIALLY PHYSICAL</span></a>
+            </div>
+            <div class="category">
+                <a href="{% url 'category' category=2 %}"><img class="decoImg" src="{% static 'home/deco2.jpg' %}" alt="deco2"><span class="catName">SENSORY</span></a>
+            </div>
+            <div class="category">
+                <a href="{% url 'category' category=3 %}"><img class="decoImg" src="{% static 'home/deco3.jpg' %}" alt="deco3"><span class="catName">INTELLECTUAL</span></a>
+            </div>
+            <div class="category">
+                <a href="{% url 'category' category=4 %}"><img class="decoImg" src="{% static 'home/deco4.jpg' %}" alt="deco4"><span class="catName">MENTAL HEALTH AND EMOTIONAL</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        {% include 'footerPage.html' %}
+    </div>
+</body>
+</html>

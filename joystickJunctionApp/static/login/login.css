@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-image: url('bg7.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.container {
+    background-color: rgba(3, 16, 19, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logoImg {
+    height: 70px;
+    width: 70px;
+}
+
+.displayTags {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.inputTags {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+button {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    background-color: rgb(3, 16, 19);
+    color: aliceblue;
+    font-size: medium;
+    border: 0;
+    height: 40px;
+    width: 45%;
+    border-radius: 19px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: red;
+}
+
+input {
+    height: 26px;
+    width: 100%;
+    border-radius: 13px;
+    border: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    /* Styles for laptops with screens smaller than 1200px */
+    .container {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Styles for tablets and small laptops */
+    .container {
+        max-width: 400px;
+    }
+
+    .logoImg {
+        height: 60px;
+        width: 60px;
+    }
+
+    button {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles for tablets and large mobile phones */
+    .container {
+        max-width: 350px;
+    }
+
+    .logoImg {
+        height: 50px;
+        width: 50px;
+    }
+
+    button {
+        height: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Styles for mobile phones */
+    .container {
+        max-width: 300px;
+    }
+
+    .logoImg {
+        height: 40px;
+        width: 40px;
+    }
+
+    button {
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Styles for smaller mobile phones */
+    .container {
+        max-width: 90%;
+    }
+
+    .logoImg {
+        height: 35px;
+        width: 35px;
+    }
+
+    button {
+        height: 26px;
+    }
+}

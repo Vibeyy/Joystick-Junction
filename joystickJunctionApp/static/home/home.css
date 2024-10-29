@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+a {
+    text-decoration: none; 
+}
+
+.coverPic {
+    background-image: url("../../static/home/bg_img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.coverPicGradient {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(3, 16, 19, 0.5);
+    padding: 5%;
+}
+
+.viewProducts {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    font-size: 1.5rem; /* Default font size for large screens */
+    text-decoration: none;
+    background-color: rgb(8, 58, 69);
+    color: aliceblue;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    border: 0;
+    margin-top: 20%;
+    transition: all 0.3s ease;
+}
+
+.viewProducts:hover {
+    transform: translateY(-10px);
+    color: red;
+}
+
+.space1 {
+    background-color: rgb(0, 4, 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 5%;
+    text-align: center;
+}
+
+.quote1 {
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+    margin: 1rem;
+}
+
+.midCoverPic {
+    background-image: url("../../static/home/backgroundwallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+}
+
+.midCoverPicGradient {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(3, 16, 19, 0.5);
+    padding: 5%;
+    border-radius: 30px;
+}
+
+.category {
+    margin: 1%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    width: calc(50% - 2%);
+    max-width: 250px;
+}
+
+.catName {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0.5rem 0;
+    color: aliceblue;
+    font-weight: bolder;
+}
+
+.category:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.decoImg {
+    padding: 2%;
+    background-position: center;
+    height: auto;
+    max-width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.decoImg:hover {
+    transform: scale(0.95);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .coverPic {
+        height: 80vh;
+    }
+    .midCoverPic {
+        height: auto;
+    }
+    .category {
+        width: calc(25% - 2%);
+        max-width: 250px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .coverPic {
+        height: 70vh;
+    }
+    .midCoverPic {
+        height: auto;
+    }
+    .category {
+        width: calc(50% - 2%);
+        max-width: 250px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .coverPic {
+        height: 60vh;
+    }
+    .midCoverPic {
+        height: auto;
+    }
+    .viewProducts {
+        margin-top: 10%;
+        font-size: 1rem; /* Adjusted font size for medium screens */
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .coverPic {
+        height: 50vh;
+    }
+    .midCoverPic {
+        height: auto;
+    }
+    .decoImg {
+        padding: 1%;
+        max-width: 80%;
+    }
+    .viewProducts {
+        margin-top: 10%;
+        font-size: 0.8rem; /* Adjusted font size for small screens */
+    }
+    .midCoverPicGradient {
+        flex-direction: column;
+        padding: 5%;
+    }
+    .category {
+        width: 100%;
+        margin: 2% 0;
+    }
+}

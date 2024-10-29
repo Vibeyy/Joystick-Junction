@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,300&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  background-image: url('background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.content {
+  width: 80%;
+  max-width: 600px; /* Example max-width for large screens */
+  background-color: rgba(3, 16, 19, 0.8);
+  padding: 20px;
+  margin: 3% auto;
+  border-radius: 20px;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.containerProfile {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between; /* Spacing between left and right sections */
+}
+
+.containerProfile .leftContentDisplay,
+.containerProfile .rightDetaisDisplay {
+  flex: 1; /* Take equal space */
+  padding: 10px;
+  color: aliceblue;
+}
+
+.displayTags {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px; /* Increased bottom margin for more space */
+}
+
+.inputTags {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px; /* Example max-width for large screens */
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Added margin-bottom to create space below button */
+}
+
+.register {
+  height: 38px;
+  width: 150px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: medium;
+  border: 0;
+  background-color: rgba(3, 16, 19, 1);
+  color: aliceblue;
+  border-radius: 19px;
+  transition: transform 0.3s ease;
+}
+
+.register:hover {
+  transform: translateY(-3px);
+  color: red;
+}
+
+/* Password toggle styling */
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle .toggle-password {
+  position: absolute;
+  top: 58%; /* Adjust as needed */
+  transform: translateY(-50%); /* Adjust vertically by moving it up by half of its own height */
+  right: 10px; /* Adjust as needed */
+  cursor: pointer;
+  color: black;
+}
+
+
+/* Media Query for Tablets and Mobile Phones */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+  }
+
+  .containerProfile .leftContentDisplay,
+  .containerProfile .rightDetaisDisplay {
+    width: 100%; /* Full width on smaller screens */
+    padding: 0; /* Reset padding for full width */
+    margin-bottom: 10px; /* Space between sections */
+  }
+
+  .inputTags {
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+}
