@@ -26,8 +26,8 @@ python manage.py migrate
 -create super Users
 
 -----run : python manage.py createsuperuser
-Username (leave blank to use 'admin'): purveenram
-Email address: purveenram.36@gmail.com
+Username (leave blank to use 'admin'): akhilesh
+Email address: nairtuttu@gmail.com
 Password:
 Password (again):
 Superuser created successfully.
