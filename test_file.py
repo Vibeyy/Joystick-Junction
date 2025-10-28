@@ -1,2 +1,2 @@
 import random 
- print(random.randit(1,10))
+ print(random.randint(5,10))
